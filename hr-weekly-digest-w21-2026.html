@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HR Weekly Digest — týden 21, 24. 5. 2026</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f0f2f7;
+    color: #2d3748;
+    line-height: 1.6;
+    padding: 24px 16px 48px;
+  }
+  .wrapper { max-width: 800px; margin: 0 auto; }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d5282 60%, #4a3b6b 100%);
+    border-radius: 16px;
+    padding: 36px 40px 28px;
+    margin-bottom: 24px;
+    color: #fff;
+  }
+  .header-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: .7; margin-bottom: 8px; }
+  .header h1 { font-size: 26px; font-weight: 800; line-height: 1.2; margin-bottom: 6px; }
+  .header-sub { font-size: 14px; opacity: .75; }
+  .header-stats { display: flex; gap: 16px; margin-top: 20px; flex-wrap: wrap; }
+  .header-stat { background: rgba(255,255,255,.12); border-radius: 8px; padding: 8px 14px; font-size: 13px; }
+  .header-stat strong { font-size: 20px; display: block; }
+
+  /* ── SECTION TITLES ── */
+  .section-title { font-size: 18px; font-weight: 800; color: #1e3a5f; margin: 32px 0 14px; display: flex; align-items: center; gap: 8px; }
+
+  /* ── TL;DR BOX ── */
+  .tldr { background: #fff; border-left: 5px solid #4a3b6b; border-radius: 0 12px 12px 0; padding: 20px 24px; margin-bottom: 8px; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+  .tldr-title { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #4a3b6b; margin-bottom: 14px; }
+  .tldr-items { display: flex; flex-direction: column; gap: 16px; }
+  .tldr-item {}
+  .tldr-trend { display: flex; align-items: baseline; gap: 8px; margin-bottom: 5px; }
+  .tldr-trend::before { content: '→'; color: #e67e22; font-weight: 700; flex-shrink: 0; }
+  .tldr-trend-text { font-size: 15px; font-weight: 600; color: #1e3a5f; }
+  .tldr-action { font-size: 14px; color: #4a5568; padding-left: 18px; border-left: 2px solid #e2e8f0; margin-left: 6px; }
+  .tldr-action strong { color: #2b6cb0; }
+
+  /* ── SIMON SINEK SECTION ── */
+  .sinek-section { background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,.07); overflow: hidden; margin-bottom: 0; }
+  .sinek-header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 18px 24px; display: flex; align-items: center; gap: 14px; }
+  .sinek-avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #e67e22, #f39c12); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .sinek-header-text {}
+  .sinek-name { font-size: 16px; font-weight: 800; color: #fff; }
+  .sinek-desc { font-size: 12px; color: rgba(255,255,255,.6); }
+  .sinek-body { padding: 20px 24px; }
+
+  .sinek-sub { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #718096; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #e2e8f0; }
+
+  .podcast-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+  .podcast-item { display: flex; gap: 12px; align-items: start; }
+  .podcast-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+  .podcast-content {}
+  .podcast-title a { font-size: 15px; font-weight: 700; color: #1e3a5f; text-decoration: none; line-height: 1.3; display: block; margin-bottom: 6px; }
+  .podcast-title a:hover { text-decoration: underline; }
+  .podcast-bullets { list-style: none; display: flex; flex-direction: column; gap: 3px; padding: 0; }
+  .podcast-bullets li { font-size: 13px; color: #4a5568; padding-left: 16px; position: relative; }
+  .podcast-bullets li::before { content: '·'; position: absolute; left: 4px; color: #e67e22; font-weight: 900; }
+
+  .article-list { display: flex; flex-direction: column; gap: 16px; }
+  .article-item { padding-bottom: 16px; border-bottom: 1px solid #f0f2f7; }
+  .article-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .article-title a { font-size: 15px; font-weight: 700; color: #1e3a5f; text-decoration: none; margin-bottom: 8px; display: block; }
+  .article-title a:hover { text-decoration: underline; }
+  .article-date { font-size: 11px; color: #a0aec0; margin-bottom: 7px; }
+  .article-bullets { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .article-bullets li { font-size: 13.5px; color: #4a5568; padding-left: 20px; position: relative; line-height: 1.5; }
+  .article-bullets li::before { content: '▸'; position: absolute; left: 0; color: #4a3b6b; font-size: 11px; top: 3px; }
+
+  /* ── LINKEDIN QUOTE SECTION ── */
+  .linkedin-section { background: #fff; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,.07); overflow: hidden; }
+  .linkedin-header { background: linear-gradient(135deg, #0077b5 0%, #005885 100%); padding: 16px 24px; display: flex; align-items: center; gap: 10px; }
+  .linkedin-logo { font-size: 22px; }
+  .linkedin-header-text { font-size: 15px; font-weight: 800; color: #fff; }
+  .linkedin-header-sub { font-size: 12px; color: rgba(255,255,255,.7); }
+  .linkedin-body { padding: 20px 24px; }
+  .quote-block { background: linear-gradient(135deg, #f7f8fc, #eef2ff); border-radius: 12px; padding: 22px 26px; margin-bottom: 16px; border-left: 4px solid #4a3b6b; position: relative; }
+  .quote-mark { font-size: 48px; color: #c3c9e0; line-height: .8; margin-bottom: 8px; font-family: Georgia, serif; }
+  .quote-text { font-size: 17px; font-weight: 600; color: #1e3a5f; line-height: 1.55; font-style: italic; margin-bottom: 12px; }
+  .quote-author { font-size: 13px; color: #718096; }
+  .quote-author strong { color: #2d3748; }
+  .linkedin-trend-title { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #718096; margin-bottom: 10px; }
+  .linkedin-trends { display: flex; flex-direction: column; gap: 8px; }
+  .linkedin-trend-item { font-size: 14px; color: #4a5568; padding-left: 16px; position: relative; }
+  .linkedin-trend-item::before { content: '#'; position: absolute; left: 0; color: #0077b5; font-weight: 700; }
+
+  /* ── CARDS (TOP 10) ── */
+  .cards { display: flex; flex-direction: column; gap: 14px; }
+  .card { background: #fff; border-radius: 14px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,.07); display: grid; grid-template-columns: 48px 1fr; gap: 0 16px; align-items: start; transition: box-shadow .2s; }
+  .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.12); }
+  .card-rank { font-size: 22px; font-weight: 900; color: #cbd5e0; line-height: 1; padding-top: 3px; }
+  .card-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+  .badge-score { background: #e67e22; color: #fff; font-size: 11px; font-weight: 800; padding: 2px 8px; border-radius: 20px; letter-spacing: .5px; }
+  .badge-cat { background: #ebf4ff; color: #2b6cb0; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+  .card h3 { font-size: 16px; font-weight: 700; color: #1e3a5f; margin-bottom: 4px; line-height: 1.4; }
+  .card h3 a { color: inherit; text-decoration: none; border-bottom: 2px solid transparent; transition: border-color .2s; }
+  .card h3 a:hover { border-color: #e67e22; }
+  .card-author { font-size: 13px; color: #718096; margin-bottom: 6px; }
+  .card-cta { font-size: 14px; font-weight: 700; color: #2b6cb0; margin-bottom: 6px; line-height: 1.45; }
+  .card-why { font-size: 14px; color: #4a5568; line-height: 1.55; margin-bottom: 8px; }
+  .card-readtime { font-size: 12px; color: #a0aec0; font-style: italic; }
+
+  /* ── WORTH MENTIONING ── */
+  .wm-list { background: #fff; border-radius: 14px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,.07); display: flex; flex-direction: column; gap: 10px; }
+  .wm-item { display: flex; gap: 10px; align-items: baseline; padding-bottom: 10px; border-bottom: 1px solid #f0f2f7; font-size: 14px; }
+  .wm-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .wm-score { background: #fefcbf; color: #744210; font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+  .wm-item a { color: #2b6cb0; font-weight: 600; text-decoration: none; }
+  .wm-item a:hover { text-decoration: underline; }
+  .wm-context { color: #718096; font-size: 13px; margin-left: 2px; }
+
+  /* ── EVENTS ── */
+  .events-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .event-card { background: #fff; border-radius: 12px; padding: 16px 18px; box-shadow: 0 2px 10px rgba(0,0,0,.06); border-top: 3px solid #4a3b6b; }
+  .event-date { font-size: 12px; font-weight: 700; color: #4a3b6b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .event-title { font-size: 14px; font-weight: 700; color: #1e3a5f; margin-bottom: 4px; line-height: 1.3; }
+  .event-title a { color: inherit; text-decoration: none; }
+  .event-title a:hover { text-decoration: underline; }
+  .event-desc { font-size: 12px; color: #718096; }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: #e2e8f0; margin: 28px 0; }
+
+  /* ── FOOTER ── */
+  .footer { margin-top: 36px; background: #1e3a5f; color: #a0aec0; border-radius: 12px; padding: 20px 28px; font-size: 13px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  .footer strong { color: #e2e8f0; }
+
+  @media (max-width: 560px) {
+    .card { grid-template-columns: 36px 1fr; gap: 0 10px; padding: 16px; }
+    .header { padding: 24px 20px; }
+    .header h1 { font-size: 20px; }
+    .sinek-body { padding: 16px; }
+    .linkedin-body { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- ══════════════════════════════════
+       HEADER
+  ══════════════════════════════════ -->
+  <header class="header">
+    <div class="header-label">HR Weekly Digest</div>
+    <h1>Týden 21 &nbsp;·&nbsp; 24. května 2026</h1>
+    <div class="header-sub">Nejlepší HR obsah z posledních 7 dní — pro tebe, Adél 👋</div>
+    <div class="header-stats">
+      <div class="header-stat"><strong>10</strong>TOP položek</div>
+      <div class="header-stat"><strong>9</strong>Worth Mentioning</div>
+      <div class="header-stat"><strong>3</strong>Akce týdne</div>
+      <div class="header-stat"><strong>50</strong>sledovaných zdrojů</div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════
+       TL;DR — 4 trendy + doporučení
+  ══════════════════════════════════ -->
+  <div class="tldr">
+    <div class="tldr-title">⚡ TL;DR — 4 trendy tohoto týdne + co s tím dělat</div>
+    <div class="tldr-items">
+
+      <div class="tldr-item">
+        <div class="tldr-trend"><span class="tldr-trend-text">JMHZ v plném provozu — 25 formulářů najednou pryč, ale pasti číhají</span></div>
+        <div class="tldr-action"><strong>Co dělat:</strong> Zkontroluj, zda váš mzdový systém (Pohoda, Helios, SAP…) už odesílá data přes JMHZ automaticky. Pokud ne, dohodněte si s dodavatelem termín implementace ještě v červnu — červenec je první „ostrý" kvartál. Připrav si pro vedení jednoduchý přehled, co JMHZ nahrazuje a co zůstává.</div>
+      </div>
+
+      <div class="tldr-item">
+        <div class="tldr-trend"><span class="tldr-trend-text">AI přechází od copilota k superagentovi — HR týmy to cítí v každodenní práci</span></div>
+        <div class="tldr-action"><strong>Co dělat:</strong> Identifikuj 2–3 procesy ve svém HR, kde trávíš nejvíc času (screening, onboarding dokumentace, odpovídání kandidátům). Pro každý si najdi konkrétní AI nástroj, který ho zvládne za tebe. Netestuj vše najednou — jedno pilotní nasazení měsíčně je udržitelné a měřitelné.</div>
+      </div>
+
+      <div class="tldr-item">
+        <div class="tldr-trend"><span class="tldr-trend-text">Work-life balance předhonilo plat — EVP zprávy firem zaostávají za realitou</span></div>
+        <div class="tldr-action"><strong>Co dělat:</strong> Proveď rychlý audit svých inzerátů a kariérní stránky — kolik prostoru dáváš flexibilitě vs. platovému rozsahu? Požádej 2–3 nedávno nastoupivší kolegy, co je přesvědčilo. Jejich odpovědi jsou tvůj nejlepší employer branding materiál na příští kampaň.</div>
+      </div>
+
+      <div class="tldr-item">
+        <div class="tldr-trend"><span class="tldr-trend-text">Skills-based hiring vypadá dobře v teorii, ale selhává v praxi — procesy zaostávají za slogany</span></div>
+        <div class="tldr-action"><strong>Co dělat:</strong> Projdi poslední 3 uzavřené nábory — byl titulem/VŠ vzdělání faktický knockout kritérium, i když nebyl v požadavcích? Pokud ano, přidej do scorecards konkrétní skills test nebo work sample jako povinný krok. Jedno malé strukturální opatření změní víc než změna jazyka v inzerátu.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       SIMON SINEK SEKCE
+  ══════════════════════════════════ -->
+  <div class="section-title">🧠 Simon Sinek — tento týden</div>
+  <div class="sinek-section">
+    <div class="sinek-header">
+      <div class="sinek-avatar">🎙️</div>
+      <div class="sinek-header-text">
+        <div class="sinek-name">Simon Sinek — The Optimism Company</div>
+        <div class="sinek-desc">simonsinek.com &nbsp;·&nbsp; Podcast: A Bit of Optimism &nbsp;·&nbsp; Blog: Stories &amp; Articles</div>
+      </div>
+    </div>
+    <div class="sinek-body">
+
+      <!-- PODCASTY -->
+      <div class="sinek-sub">🎧 Aktuální epizody podcastu — A Bit of Optimism</div>
+      <div class="podcast-list">
+
+        <div class="podcast-item">
+          <div class="podcast-icon">🎙️</div>
+          <div class="podcast-content">
+            <div class="podcast-title">
+              <a href="https://simonsinek.com/podcast/episodes/how-to-stop-being-socially-awkward-according-to-science-with-behavioral-scientist-vanessa-van-edwards" target="_blank" rel="noopener">How to Stop Being Socially Awkward (According to Science) — s Vanessou Van Edwards</a>
+            </div>
+            <ul class="podcast-bullets">
+              <li>Výzkumem podložené techniky pro lepší první dojem a navazování kontaktu — přímá aplikace v pohovorech i na networking akcích</li>
+              <li>Proč velká část „trapnosti" v konverzaci pochází z toho, že se soustředíme sami na sebe místo na druhou stranu</li>
+              <li>Konkrétní signály, podle kterých poznáš, zda je člověk otevřený rozhovoru, nebo ne — užitečné při assessmentu kandidátů</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="podcast-item">
+          <div class="podcast-icon">🎙️</div>
+          <div class="podcast-content">
+            <div class="podcast-title">
+              <a href="https://simonsinek.com/podcast/episodes/why-young-people-dont-have-the-hunger-for-work-and-what-leaders-need-to-hear-with-generations-expert-dr-eliza-filby" target="_blank" rel="noopener">Why Young People Don't Have 'The Hunger' for Work — s Dr. Elizou Filby (expert na generace)</a>
+            </div>
+            <ul class="podcast-bullets">
+              <li>Proč generace Z nepřichází do práce s ambicí „dokázat se" — a co to znamená pro náborářovu práci i onboarding</li>
+              <li>Jak se změnily životní priority mladých lidí a proč tradiční motivační nástroje (povýšení, plat) nefungují stejně jako dřív</li>
+              <li>Co konkrétně lídři dělají špatně, když mluví o „hungerless" zaměstnancích — a jak změnit rámec pohledu</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="podcast-item">
+          <div class="podcast-icon">🎙️</div>
+          <div class="podcast-content">
+            <div class="podcast-title">
+              <a href="https://simonsinek.com/podcast/episodes/the-leadership-advice-nobody-follows-but-everyone-should-with-top-leadership-expert-don-yaeger" target="_blank" rel="noopener">The Leadership Advice Nobody Follows (But Everyone Should) — s Donem Yaegerem</a>
+            </div>
+            <ul class="podcast-bullets">
+              <li>Jaká je ta jedna leadership věc, o které všichni vědí, ale nikdo ji nedělá — a proč</li>
+              <li>Vzorce, které Yaeger identifikoval u nejlepších sportovních lídrů, a jak se překrývají s firemním leadershipem</li>
+              <li>Proč odvaha říct nepopulární pravdu je důležitější než technické znalosti vedoucího</li>
+            </ul>
+          </div>
+        </div>
+
+      </div><!-- /podcast-list -->
+
+      <!-- BLOG ČLÁNKY -->
+      <div class="sinek-sub">📝 Čerstvé články z blogu (simonsinek.com/stories)</div>
+      <div class="article-list">
+
+        <div class="article-item">
+          <div class="article-title">
+            <a href="https://simonsinek.com/stories/the-three-words-that-make-recognition-actually-stick" target="_blank" rel="noopener">The Three Words That Make Recognition Actually Stick</a>
+          </div>
+          <div class="article-date">7. 5. 2026 &nbsp;·&nbsp; 2 min read</div>
+          <ul class="article-bullets">
+            <li>„Výborná práce" evaporuje dřív, než člověk dojde na místo — vágní pochvala nic nenaučí, ani toho, kdo ji dostane, ani tým okolo</li>
+            <li>Správné uznání musí <em>pojmenovat konkrétní chování</em> a propojit ho s hodnotami kultury: „Když jsi zastavil meeting, abys pozval kritiku, zachránil jsi nás před rozhodnutím, kterého bychom litovali"</li>
+            <li>Druhá část — <em>renewal</em> — je otázka „Kde se chceš příště roztáhnout?" a jedno konkrétní závazné kroky (ne „zůstaneme v kontaktu")</li>
+            <li>Bandurův výzkum sociálního učení: specifická pochvala je <em>masterclass pro celý tým</em>, nejen pro jednotlivce — každý si to zapamatuje jako kulturní data point</li>
+          </ul>
+        </div>
+
+        <div class="article-item">
+          <div class="article-title">
+            <a href="https://simonsinek.com/stories/the-hardest-thing-a-leader-can-do-is-nothing" target="_blank" rel="noopener">The Hardest Thing a Leader Can Do Is Nothing</a>
+          </div>
+          <div class="article-date">6. 5. 2026 &nbsp;·&nbsp; 2 min read</div>
+          <ul class="article-bullets">
+            <li>Lídři jsou trénovaní na řešení — ale existují rozhovory, kde právě tenhle instinkt je překážka. Lidé potřebují <em>cítit, že nejsou sami</em>, ne dostat odpověď</li>
+            <li>Před každým obtížným rozhovorem se zeptej: <em>„Chceš, abych poslouchal, nebo hledal řešení?"</em> — tato otázka snižuje stres partnera okamžitě (terapeutický výzkum)</li>
+            <li>Čím víc autority neseš, tím těžší jsou tvá slova — casual reakce seniora může způsobit týden úzkosti o tři úrovně níže</li>
+            <li>Čtyři slova, která mění dynamiku: <em>„Jsem tu, abych chápal, ne opravoval"</em></li>
+          </ul>
+        </div>
+
+        <div class="article-item">
+          <div class="article-title">
+            <a href="https://simonsinek.com/stories/every-leader-can-destroy-culture-heres-a-simple-way-to-prevent-it" target="_blank" rel="noopener">Every Leader Can Destroy Culture. Here's a Simple Way to Prevent It</a>
+          </div>
+          <div class="article-date">13. 2. 2026 &nbsp;·&nbsp; 3 min read &nbsp;·&nbsp; 🔥 stále v top čtenosti</div>
+          <ul class="article-bullets">
+            <li>Do každého dalšího rozhovoru přinášíme „zbytky" — emoční reziduum z předchozích interakcí. CEO WD-40 Garry Ridge: <em>„Jako lídři nemáme právo nosit své zbytky k lidem"</em></li>
+            <li>Garryho praxe po 25 let: karta přilepená na notesu s jedinou otázkou — <em>„Jsem teď tím člověkem, kterým chci být?"</em> — pod tím seznam svých hodnot</li>
+            <li>MIT Sloan výzkum: stres lídra vytváří kognitivní drain na celou organizaci a ztěžuje práci všem kolem</li>
+            <li>Praktický krok: napiš si 5–7 vlastností svého ideálního vedoucího já a umísti je tam, kde je uvidíš před každou schůzkou</li>
+          </ul>
+        </div>
+
+      </div><!-- /article-list -->
+    </div>
+  </div><!-- /sinek-section -->
+
+  <!-- ══════════════════════════════════
+       LINKEDIN SEKCE
+  ══════════════════════════════════ -->
+  <div class="section-title">💼 LinkedIn — myšlenka týdne</div>
+  <div class="linkedin-section">
+    <div class="linkedin-header">
+      <div class="linkedin-logo">in</div>
+      <div>
+        <div class="linkedin-header-text">Z HR LinkedIn prostoru</div>
+        <div class="linkedin-header-sub">Citát k zamyšlení + co rezonuje v HR komunitě</div>
+      </div>
+    </div>
+    <div class="linkedin-body">
+
+      <div class="quote-block">
+        <div class="quote-mark">"</div>
+        <div class="quote-text">Virtually every company is dealing with job changes, new skills, new roles and increased productivity demands around AI. There's a massive need to upskill, educate, enable and empower people to change their role. HR teams that treat this as an IT project will lose. HR teams that treat this as a human transformation will win.</div>
+        <div class="quote-author"><strong>Josh Bersin</strong> &nbsp;·&nbsp; HR analytik, joshbersin.com &nbsp;·&nbsp; <a href="https://www.linkedin.com/posts/bersin_ai-hr-activity-7398026709163245568-PZ6s" target="_blank" rel="noopener">LinkedIn post</a></div>
+      </div>
+
+      <div class="linkedin-trend-title">Co nyní hýbe HR komunitou na LinkedIn</div>
+      <div class="linkedin-trends">
+        <div class="linkedin-trend-item"><strong>LinkedIn Hiring Assistant</strong> — AI nástroj přímo v LinkedIn, který přebírá rutinní screeningové kroky. Velká část HR komunity testuje a sdílí první zkušenosti — <em>„zázračné řešení pro recruitery"</em> vs. <em>„ztráta lidského kontaktu"</em>.</div>
+        <div class="linkedin-trend-item"><strong>Employee-generated content</strong> — příspěvky zaměstnanců generují 4,3× více dosahu než firemní page. HR profíci diskutují, jak aktivovat zaměstnance jako brand ambassadory bez toho, aby to vypadalo nuceně.</div>
+        <div class="linkedin-trend-item"><strong>Generace Z a práce</strong> — epizoda Sinekova podcastu o „hungerless" zaměstnancích vyvolala lavinu reakcí: část lídří souhlasí, část kontruje, že problém je v leadershipu, ne v generaci.</div>
+      </div>
+
+    </div>
+  </div><!-- /linkedin-section -->
+
+  <!-- ══════════════════════════════════
+       TOP 10
+  ══════════════════════════════════ -->
+  <div class="section-title">🔥 TOP 10 tohoto týdne</div>
+  <div class="cards">
+
+    <!-- 1 -->
+    <div class="card">
+      <div class="card-rank">1.</div>
+      <div>
+        <div class="card-top">
+          <span class="badge-score">9/10</span>
+          <span class="badge-cat">Legislativa 🇨🇿</span>
+        </div>
+        <h3><a href="https://plusportal.cz/blog/jednotne-mesicni-hlaseni-zamestnavatelu" target="_blank" rel="noopener">JMHZ 2026: Konec 25 formulářů — co musí každá personalistka vědět</a></h3>
+        <div class="card-author">Zdroj: PlusPortal.cz &nbsp;·&nbsp; Legislativa / Mzdy</div>
+        <div class="card-cta">Po přečtení budeš vědět přesně, co JMHZ mění v praxi, co nahrazuje a jak se připravit, než se to projeví v první chybě.</div>
+        <div class="card-why">Jednotné měsíční hlášení zaměstnavatelů platí od 1. 1. 2026 a mění způsob, jak firmy reportují mzdová data státu — přímý dopad na každodenní agendu personalistky.</div>
+        <div class="card-readtime">⏱ 8 min read</div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="card">
+      <div class="card-rank">2.</div>
+      <div>
+        <div class="card-top">
+          <span class="badge-score">9/10</span>
+          <span class="badge-cat">Legislativa 🇨🇿</span>
+        </div>
+        <h3><a href="https://www.sloneek.cz/blog/novela-zakoniku-prace-2026/" target="_blank" rel="noopener">Novela zákoníku práce 2026: Přehled všech změn (od zkušební doby po mlčenlivost o mzdě)</a></h3>
+        <div class="card-author">Sloneek.cz &nbsp;·&nbsp; Legislativa / Pracovní právo</div>
+        <div class="card-cta">Po přečtení budeš mít v hlavě (i v dokumentu) všechny změny flexinovely 2026 na jednom místě — bez zbytečného paragrafování.</div>
+        <div class="card-why">Druhá vlna flexinovely (od 1. 1. 2026) mění výpověď, zkušební dobu i pravidla pro DPP/DPČ při rodičovské. Nejlepší stručný přehled s přímými paragrafy.</div>
+        <div class="card-readtime">⏱ 10 min read</div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="card">
+      <div class="card-rank">3.</div>
+      <div>
+        <div class="card-top">
+          <span class="badge-score">9/10</span>
+          <span class="badge-cat">AI v HR 🇬🇧</span>
+        </div>
+        <h3><a href="https://techintelpro.com/news/hr/ai/josh-bersin-2026-report-hr-superagents-ai-imperatives" target="_blank" rel="noopener">Josh Bersin: The Superworker Organization — AI Goes Enterprise (Report 2026)</a></h3>
+        <div class="card-author">Josh Bersin / joshbersin.com &nbsp;·&nbsp; AI v HR / Future of Work</div>
+        <div class="card-cta">Po přečtení pochopíš, kde přesně AI nahradí HR procesy a kde naopak tvoje role poroste — a budeš mít argumenty pro vedení.</div>
+        <div class="card-why">Bersin identifikoval 100 HR procesů pro automatizaci AI agenty — říká, že 30 %+ HR pozic se přesune k vyšší přidané hodnotě. Zásadní strategický dokument.</div>
+        <div class="card-readtime">⏱ 15 min read (executive summary)</div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="card">
+      <div class="card-rank">4.</div>
+      <div>
+        <div class="card-top">
+          <span class="badge-score">8/10</span>
+          <span class="badge-cat">Trh práce 🇨🇿</span>
+        </div>
+        <h3><a href="https://zpravy.kurzy.cz/852897-naborovy-optimismus-se-drzi-na-lonskem-prumeru-manpowergroup-index-trhu-prace-pro-2-ctvrtleti/" target="_blank" rel="noopener">ManpowerGroup Index trhu práce Q2 2026: Náborový optimismus +14 bodů, táhnou finance a stavebnictví</a></h3>
+        <div class="card-author">Jiří Halbrštát, ManpowerGroup &nbsp;·&nbsp; Trh práce ČR / Data</div>
+        <div class="card-cta">Po přečtení budeš mít čísla, která přesvědčí vedení, proč teď je nebo není správný čas nabírat.</div>
+        <div class="card-why">32 % zaměstnavatelů plánuje nábor, 49 % zmrazuje stav — nejčerstvější kvantitativní snapshot českého trhu práce pro argumentaci při plánování kapacit.</div>
+        <div class="card-readtime">⏱ 5 min read</div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="card">
+      <div class="card-rank">5.</div>
+      <div>
+        <div class="card-top">
+          <span class="badge-score">8/10</span>
+          <span class="badge-cat">AI v HR 🇨🇿</span>
+        </div>
+        <h3><a href="https://www.hrnews.cz/lidske-zdroje/trendy-id-148711/ai-v-recruitmentu-pomocnik-i-potencialni-hrozba-id-4446337" target="_blank" rel="noopener">AI v recruitmentu: Pomocník i potenciální hrozba? Míra dehumanizace může dosáhnout 40 %</a></h3>
+        <div class="card-author">HRnews.cz &nbsp;·&nbsp; AI v HR / Recruitment</div>
+        <div class="card-cta">Po přečtení budeš vědět, kde AI v náboru skutečně pomáhá a kde přesně může zničit candidate experience — s konkrétními čísly.</div>
+        <div class="card-why">Firmy spoléhající jen na AI prescreening ztrácejí kontakt s kandidáty, kteří si pak k firmě nevybudují vztah. Vyvážený pohled bez hype.</div>
+        <div class="card-readtime">⏱ 7 min read</div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="card">
+      <div class="card-rank">6.</div>
+      <div>
+        <div class="card-top">
+          <span class="badge-score">8/10</span>
+          <span class="badge-cat">Employer Branding 🇬🇧</span>
+          <span style="font-size:12px;background:#e8f5e9;color:#2e7d32;padding:2px 8px;border-radius:20px;font-weight:700;">👩‍💻 Online marketing</span>
+        </div>
+        <h3><a href="https://rallyrecruitmentmarketing.com/2026/01/recruiting-trends-2026-recruitment-marketing/" target="_blank" rel="noopener">5 Recruiting Trends 2026: Work-Life Balance předhání plat, video bije text, AI filtruje ještě před náborářem</a></h3>
+        <div class="card-author">Rally Recruitment Marketing &nbsp;·&nbsp; Employer Branding / Recruitment Marketing</div>
+        <div class="card-cta">Po přečtení budeš vědět, jak musí vypadat employer brand v roce 2026, aby ho doporučily nejen lidi, ale i AI algoritmy kandidátů.</div>
+        <div class="card-why">Kandidáti teď posuzují firmu přes AI nástroje dřív, než se ozve recruiter — employer brand musí být optimalizovaný na nové způsoby vyhledávání.</div>
+        <div class="card-readtime">⏱ 9 min read</div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="card">
+      <div class="card-rank">7.</div>
+      <div>
+        <div class="card-top">
+          <span class="badge-score">8/10</span>
+          <span class="badge-cat">Legislativa 🇨🇿</span>
+        </div>
+        <h3><a href="https://www.hrnews.cz/lidske-zdroje/legislativa-id-2698718/efektivni-personalistika-2026-proc-mene-znamena-vice-a-jak-s-id-4516408" target="_blank" rel="noopener">Efektivní personalistika 2026: Proč méně znamená více a jak se neztratit v právní džungli</a></h3>
+        <div class="card-author">HRnews.cz &nbsp;·&nbsp; Legislativa / HR praxe</div>
+        <div class="card-cta">Po přečtení budeš mít konkrétní rámec, jak prioritizovat legislativní agendu a neutopit se v papírování na úkor strategické práce.</div>
+        <div class="card-why">Praktický návod jak v roce velkých legislativních změn nepodlehnout papírové džungli — se zaměřením na to, co je skutečně důležité versus administrativní šum.</div>
+        <div class="card-readtime">⏱ 8 min read</div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="card">
+      <div class="card-rank">8.</div>
+      <div>
+        <div class="card-top">
+          <span class="badge-score">8/10</span>
+          <span class="badge-cat">Recruitment 🇬🇧</span>
+        </div>
+        <h3><a href="https://thesra.co/2026/05/18/recruitment-is-still-gold/" target="_blank" rel="noopener">Recruitment is still gold! — Greg Savage (18. 5. 2026)</a></h3>
+        <div class="card-author">Greg Savage / The Savage Truth &nbsp;·&nbsp; Recruitment / Leadership</div>
+        <div class="card-cta">Po přečtení ti Savage ukáže, proč AI není konec recruitmentu — a co přesně musíš umět, aby sis tu zlatou éru nevyřídil sám.</div>
+        <div class="card-why">Kontrariánský pohled: rekrutéři zbavení adminu a soustředění na vztahy mají zlatou éru před sebou — ale musí změnit to, na co soustředí energii.</div>
+        <div class="card-readtime">⏱ 5 min read</div>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="card">
+      <div class="card-rank">9.</div>
+      <div>
+        <div class="card-top">
+          <span class="badge-score">8/10</span>
+          <span class="badge-cat">People Analytics 🇬🇧</span>
+          <span style="font-size:12px;background:#fef3c7;color:#92400e;padding:2px 8px;border-radius:20px;font-weight:700;">🎧 Podcast</span>
+        </div>
+        <h3><a href="https://www.myhrfuture.com/digital-hr-leaders-podcast" target="_blank" rel="noopener">Digital HR Leaders Podcast: How People Analytics Empowers the Chief People Officer</a></h3>
+        <div class="card-author">David Green / myHRfuture &nbsp;·&nbsp; People Analytics / Leadership</div>
+        <div class="card-cta">Po poslechu budeš vědět, jak konkrétně přesvědčit vedení čísly — a ne instinktem — že HR rozhodnutí mají obchodní dopad.</div>
+        <div class="card-why">Epizoda s Dean Carterem ukazuje, jak people analytics transformuje roli CPO od administrativní funkce ke strategickému partnerovi boardu — s reálnými case studies.</div>
+        <div class="card-readtime">⏱ 45 min podcast</div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="card">
+      <div class="card-rank">10.</div>
+      <div>
+        <div class="card-top">
+          <span class="badge-score">8/10</span>
+          <span class="badge-cat">Recruitment / AI 🇨🇿🇬🇧</span>
+        </div>
+        <h3><a href="https://newsletter.fullstackrecruiter.net/p/talent-acquisition-predictions-for-2026" target="_blank" rel="noopener">Talent Acquisition Predictions for 2026 — Jan Tegze (Full Stack Recruiter)</a></h3>
+        <div class="card-author">Jan Tegze / fullstackrecruiter.net &nbsp;·&nbsp; Recruitment / AI v HR</div>
+        <div class="card-cta">Po přečtení budeš vědět, jak AI generované životopisy mění pravidla screeningu — a proč nestačí jen lepší ATS.</div>
+        <div class="card-why">Tegze předpovídá konsolidaci rekrutérského stacku a varuje: AI životopisy zabíjejí autenticitu a nutí přejít na skills-based assessment jako standard, ne výjimku.</div>
+        <div class="card-readtime">⏱ 10 min read</div>
+      </div>
+    </div>
+
+  </div><!-- /cards -->
+
+  <!-- ══════════════════════════════════
+       WORTH MENTIONING
+  ══════════════════════════════════ -->
+  <div class="section-title">💡 Worth Mentioning</div>
+  <div class="wm-list">
+
+    <div class="wm-item">
+      <span class="wm-score">7/10</span>
+      <div>
+        <span>🇨🇿</span>
+        <a href="https://www.hrnews.cz/lidske-zdroje/rizeni-id-2698710/konec-hr-idealum-rok-2026-patri-tvrdym-datum-a-efektivite-id-4511347" target="_blank" rel="noopener">Konec HR ideálům: Rok 2026 patří tvrdým datům a efektivitě</a>
+        <span class="wm-context">— HRnews.cz · Kontrariánský pohled: rok bude o měřitelnosti, ne o well-being sloganech — čtivý provokativní článek.</span>
+      </div>
+    </div>
+
+    <div class="wm-item">
+      <span class="wm-score">7/10</span>
+      <div>
+        <span>🇬🇧</span>
+        <a href="https://fortune.com/2026/03/02/skills-based-hiring-was-an-hr-mantra-execution-never-followed/" target="_blank" rel="noopener">Skills-based hiring has a follow-through problem</a>
+        <span class="wm-context">— Fortune · Datová analýza: firmy hlásají kompetence, ale filtrují pořád podle titulů — pojmenování systémového selhání.</span>
+      </div>
+    </div>
+
+    <div class="wm-item">
+      <span class="wm-score">7/10</span>
+      <div>
+        <span>🇬🇧</span>
+        <a href="https://thesra.co/2026/05/11/you-know-more-than-your-client/" target="_blank" rel="noopener">You know more than your client — Greg Savage (11. 5. 2026)</a>
+        <span class="wm-context">— The Savage Truth · Proč by recruiter měl jít do jednání s hiring managerem jako poradce, ne jako plnič zadání.</span>
+      </div>
+    </div>
+
+    <div class="wm-item">
+      <span class="wm-score">7/10</span>
+      <div>
+        <span>🇬🇧</span>
+        <a href="https://thesra.co/2026/05/05/measure-properly-or-guess-your-growth/" target="_blank" rel="noopener">Measure properly or guess your growth — Greg Savage (5. 5. 2026)</a>
+        <span class="wm-context">— The Savage Truth · Konkrétní metriky odlišující náhodný růst od řízeného — aplikovatelné i na interní nábor.</span>
+      </div>
+    </div>
+
+    <div class="wm-item">
+      <span class="wm-score">7/10</span>
+      <div>
+        <span>🇬🇧</span>
+        <a href="https://recruitingbrainfood.substack.com/p/recruiting-brainfood-issue-494" target="_blank" rel="noopener">Recruiting Brainfood — Issue 494</a>
+        <span class="wm-context">— Hung Lee · Týdenní kurátorský výběr nejlepšího recruitment obsahu ze zdrojů, které mainstream nezachytí.</span>
+      </div>
+    </div>
+
+    <div class="wm-item">
+      <span class="wm-score">7/10</span>
+      <div>
+        <span>🇬🇧</span>
+        <a href="https://www.unleash.ai/company-culture/amy-edmondson-high-psychological-safety-means-a-high-learning-quotient-what-hr-leaders-need-to-know/" target="_blank" rel="noopener">Amy Edmondson: High Psychological Safety = High Learning Quotient</a>
+        <span class="wm-context">— UNLEASH · Edmondsonin argument pro 2026: bezpečí ve firmě přímo koreluje s rychlostí učení celé organizace.</span>
+      </div>
+    </div>
+
+    <div class="wm-item">
+      <span class="wm-score">7/10</span>
+      <div>
+        <span>🇬🇧</span>
+        <a href="https://www.vouchfor.com/blog/top-employer-branding-trends" target="_blank" rel="noopener">Top Employer Branding Trends 2026: Tools, Strategies &amp; Insights</a>
+        <span class="wm-context">— Vouch · Zaměstnanci jako brand ambassadoři na LinkedIn, TikToku a Instagramu — přehled nástrojů a přístupů.</span>
+      </div>
+    </div>
+
+    <div class="wm-item">
+      <span class="wm-score">6/10</span>
+      <div>
+        <span>🇨🇿</span>
+        <a href="https://blog.tomashajzler.com/clanek/svoboda-v-praci-2-0" target="_blank" rel="noopener">Svoboda v práci 2.0 — Tomáš Hajzler</a>
+        <span class="wm-context">— TomasHajzler.com · Jak se mění vnímání svobody v práci po vlně AI transformací — filozofický, ale prakticky zakotvený.</span>
+      </div>
+    </div>
+
+    <div class="wm-item">
+      <span class="wm-score">6/10</span>
+      <div>
+        <span>🇨🇿</span>
+        <a href="https://www.hrnews.cz/lidske-zdroje/trendy-id-148711/hr-incomms-r-evoluce-2026-kde-se-potka-hr-a-interka-v-dobe-t-id-4502407" target="_blank" rel="noopener">HR &amp; InComms (R)Evoluce 2026: Kde se potká HR a interní komunikace</a>
+        <span class="wm-context">— HRnews.cz · Jak HR a interní komunikace splývají v době hybridní práce — s praktickými příklady.</span>
+      </div>
+    </div>
+
+  </div><!-- /wm-list -->
+
+  <!-- ══════════════════════════════════
+       AKCE TÝDNE
+  ══════════════════════════════════ -->
+  <div class="section-title">📅 Akce tohoto a příštího týdne</div>
+  <div class="events-grid">
+    <div class="event-card">
+      <div class="event-date">🔴 TENTO TÝDEN · 27. 5. 2026</div>
+      <div class="event-title"><a href="https://www.hrforum.cz/akce/hr-know-how-horizont-2026-lidsky-faktor-v-digitalnim-veku" target="_blank" rel="noopener">HR Know-How | HoRizont 2026</a></div>
+      <div class="event-desc">Kongres personalistů ČR · Praha, Congress Centre · 8:45–16:45 · Téma: Lidský faktor v digitálním věku. Bloky: AI &amp; Law, EX, L&D, Leadership.</div>
+    </div>
+    <div class="event-card">
+      <div class="event-date">4. 6. 2026 · Praha</div>
+      <div class="event-title"><a href="https://blog.tomashajzler.com/clanek/svoboda-v-praci-2-0" target="_blank" rel="noopener">Svoboda Naživo — Tomáš Hajzler</a></div>
+      <div class="event-desc">Komunitní setkání hnutí Svoboda v práci · Corporate responsibility &amp; jak budovat firmu přínosnou pro lidi i planetu.</div>
+    </div>
+    <div class="event-card">
+      <div class="event-date">Červen 2026 · Praha</div>
+      <div class="event-title"><a href="https://benefitprohr.benefit-plus.cz/cz/udalosti/czech-hr-summit-2026" target="_blank" rel="noopener">Czech HR Summit 2026</a></div>
+      <div class="event-desc">HR v éře AI: Lidskost, inovace a udržitelnost · Ověř aktuální datum na webu organizátora.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>Připraveno <strong>24. 5. 2026</strong> &nbsp;·&nbsp; Zdroje: <strong>22 prohledáno</strong> &nbsp;·&nbsp; Další vydání: <strong>31. 5. 2026</strong></div>
+    <div>Sleduji <strong>50 osobností &amp; zdrojů</strong> z HR/leadership světa</div>
+  </footer>
+
+</div><!-- /wrapper -->
+</body>
+</html>
